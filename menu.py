@@ -53,12 +53,24 @@ menu = {
 # 1. Set up order list. Order list will store a list of dictionaries for
 # menu item name, item price, and quantity ordered
 
+# Below is from Week 3 Activity 11 - gust_list_solution.py
+
+order_list = []
+
+# order_list.append({
+#     menu_item_name: 
+#     item_price: 
+#     quantity: 
+# })
 
 # Launch the store and present a greeting to the customer
 print("Welcome to the variety food truck.")
 
 # Customers may want to order multiple items, so let's create a continuous
 # loop
+
+# Below is from Week 3 Activity 9 - print_a_menu_solution.py
+
 place_order = True
 while place_order:
     # Ask the customer from which menu category they want to order
@@ -118,20 +130,21 @@ while place_order:
                     }
                     i += 1
             # 2. Ask customer to input menu item number
-
+            # Below is from Week 3 Activity 11 - gust_list_solution.py
+            customer_order = input("Please enter the menu item number. ")
 
             # 3. Check if the customer typed a number
-
+            if customer_order.isdigit():
                 # Convert the menu selection to an integer
-
+                customer_order = int(customer_order)
 
                 # 4. Check if the menu selection is in the menu items
-
+                if int(customer_order) in "TOFILLIN".keys():
                     # Store the item name as a variable
-
+                    menu_category_name = menu_items[int(menu_category)]
 
                     # Ask the customer for the quantity of the menu item
-
+# input("How many " + [menu_item] + "do you want?")
 
                     # Check if the quantity is a number, default to 1 if not
 
@@ -143,7 +156,9 @@ while place_order:
 
 
                 # Tell the customer they didn't select a menu option
-
+            else:
+                print(f"{customer_order} was not a menu option.")
+        print("You didn't enter a valid response. Please enter a number.")
         else:
             # Tell the customer they didn't select a menu option
             print(f"{menu_category} was not a menu option.")
