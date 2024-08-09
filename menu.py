@@ -57,12 +57,6 @@ menu = {
 
 order_list = []
 
-# order_list.append({
-#     menu_item_name: 
-#     item_price: 
-#     quantity: 
-# })
-
 # Launch the store and present a greeting to the customer
 print("Welcome to the variety food truck.")
 
@@ -131,33 +125,44 @@ while place_order:
                     i += 1
             # 2. Ask customer to input menu item number
             # Below is from Week 3 Activity 11 - gust_list_solution.py
-            customer_order = input("Please enter the menu item number. ")
+            menu_selection = input("Please enter the menu item number. ")
 
             # 3. Check if the customer typed a number
-            if customer_order.isdigit():
+            if menu_selection.isdigit():
                 # Convert the menu selection to an integer
-                customer_order = int(customer_order)
+                menu_selection = int(menu_selection)
 
                 # 4. Check if the menu selection is in the menu items
-                if int(customer_order) in "TOFILLIN".keys():
+                if menu_selection in menu_items.keys():
                     # Store the item name as a variable
-                    menu_category_name = menu_items[int(menu_category)]
+
+                    menu_selection_name = menu_items[int(menu_selection)]"TO FINISH (getting {'Item name': 'Sushi', 'Price': 7.49})"
 
                     # Ask the customer for the quantity of the menu item
-# input("How many " + [menu_item] + "do you want?")
+                    quantity = input(f"How many {menu_selection_name} do you want? The default quantity will be 1 if you do not input a number. ")
 
                     # Check if the quantity is a number, default to 1 if not
-
+                    if quantity.isdigit():
+                        quantity = int(quantity)
+                    else:
+                        quantity = 1
 
                     # Add the item name, price, and quantity to the order list
-
+                    
+                    menu_selection_price = menu[menu_category_name[menu_selection_name]]"TO FINISH"
+                    
+                    order_list.append({
+                        "Item Name": menu_selection_name,
+                        "Price": menu_selection_price,
+                        "Quantity": quantity
+                    })
 
                     # Tell the customer that their input isn't valid
-
-
+                else:
+                    print(f"{menu_selection} was not a menu option.")
                 # Tell the customer they didn't select a menu option
             else:
-                print(f"{customer_order} was not a menu option.")
+                print(f"{menu_selection} was not a menu option.")
         print("You didn't enter a valid response. Please enter a number.")
         else:
             # Tell the customer they didn't select a menu option
