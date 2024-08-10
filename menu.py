@@ -135,9 +135,9 @@ while place_order:
                 # 4. Check if the menu selection is in the menu items
                 if menu_selection in menu_items.keys():
                     # Store the item name as a variable
-                    for key in menu_items.items():
-                        menu_items[i] = key
+                    
                     menu_selection_name = menu_items[int(menu_selection)]
+                    
                     # "TO FINISH (getting {'Item name': 'Sushi', 'Price': 7.49}, menu_items is defined above but I pulled the info below to help. I want to pull the actual Item Name, in this case would be Sushi)"
                     # menu_items[i] = {
                     #     "Item name": key,
