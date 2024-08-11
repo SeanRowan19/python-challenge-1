@@ -53,8 +53,6 @@ menu = {
 # 1. Set up order list. Order list will store a list of dictionaries for
 # menu item name, item price, and quantity ordered
 
-# Below is from Week 3 Activity 11 - gust_list_solution.py
-
 order_list = []
 
 # Launch the store and present a greeting to the customer
@@ -62,8 +60,6 @@ print("Welcome to the variety food truck.")
 
 # Customers may want to order multiple items, so let's create a continuous
 # loop
-
-# Below is from Week 3 Activity 9 - print_a_menu_solution.py
 
 place_order = True
 while place_order:
@@ -158,7 +154,6 @@ while place_order:
                         "Quantity": quantity
                     })
                 
-
                     # Tell the customer that their input isn't valid
                 else:
                     print(f"{menu_selection} was not a menu option.")
