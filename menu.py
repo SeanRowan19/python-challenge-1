@@ -63,6 +63,7 @@ print("Welcome to the variety food truck.")
 
 place_order = True
 while place_order:
+    
     # Ask the customer from which menu category they want to order
     print("From which menu would you like to order? ")
 
